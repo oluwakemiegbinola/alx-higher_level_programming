@@ -1,3 +1,4 @@
 #!/usr/bin/python3
-import this
-
+with open('zen', 'r') as file:
+    content = file.read()
+    print(content)
