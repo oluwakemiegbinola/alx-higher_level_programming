@@ -5,7 +5,7 @@ Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
 Or
 sudo ./0-select_states.py <..> <..> <..> if
 MySQLdb.OperationalError:
-(2002, "Can't connect to local MySQL server through socket \
+(2002, "Can't connect to local MySQL server through socket 
 '/var/run/mysqld/mysqld.sock' (13)")
 error is encountered on WSL2
 """
