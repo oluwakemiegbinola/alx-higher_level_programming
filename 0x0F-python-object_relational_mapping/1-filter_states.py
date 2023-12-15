@@ -1,19 +1,15 @@
 #!/usr/bin/python3
-"""
-Lists all states from the database hbtn_0e_0_usa.
-Usage: ./0-select_states.py <mysql username> <mysql password> <database name>
-Or
-sudo ./0-select_states.py <..> <..> <..> if
-MySQLdb.OperationalError:
-(2002, "Can't connect to local MySQL server through socket \
-'/var/run/mysqld/mysqld.sock' (13)")
-error is encountered on WSL2
-"""
+"""Module that lists all states from the hbtn_0e_0_usa database."""
 import sys
 import MySQLdb
 
 if __name__ == "__main__":
+    # Get MySQL credentials from command-line arguments
+    # Connect to MySQL server
     db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
     c = db.cursor()
-    c.execute("SELECT * FROM `states`")
-    [print(state) for state in c.fetchall()]
+
+    # Execute the SQL query to retrieve all states sorted by id
+    c.execute("SELECT * FROM `states` ORDER BY `id`")
+    [print(state) for state in c.fetchall() if state[1][0] == "N"]
+
