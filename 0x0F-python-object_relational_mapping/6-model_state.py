@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-This script defines a State class and
-a Base class to work with MySQLAlchemy ORM.
+"""Start link class to table in database
 """
 import sys
 from model_state import Base, State
